@@ -7,5 +7,5 @@ export const appRoutes : Routes=[
     {path: 'register', component:RegisterComponent},
     {path: 'quiz', component:QuizComponent},
     {path: 'result', component:ResultComponent},
-    {path: '', redirectTo:'./register', pathMatch:'full'}
+    {path: '', redirectTo:'register', pathMatch:'full'}
 ];

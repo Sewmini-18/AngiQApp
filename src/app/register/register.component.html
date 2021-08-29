@@ -1,18 +1,18 @@
-<div class="col s6 offset-s3 m7">
-    <h2 class="header">Register</h2>
-    <div class="card horizontal small ">
+<div class="col s6 offset-s3 m7 reg container">
+    <h2 class="header">Quiz Registration</h2>
+    <div class="card horizontal small card1 ">
         <div class="">
-            <img class="materialboxed" src="https://lorempixel.com/100/190/nature/6" alt="image" width="450" height="300">
+            <img class="materialboxed" src="/assets/images/hp1.jpg" alt="image" width="250" height="300">
         </div>
         <div class="card-stacked">
             <div class="card-content">
-                <form class="col s6" #registerForm="ngForm">
+                <form class="col s6" #registerForm="ngForm" ngNativeValidate>
                     <div class="row">
                         <div class="input-field col s12">
                             <span class="material-icons prefix">
                                 assignment_ind
                                 </span>
-                            <input type="text" id="icon_prefix2" name="Name" #Name ngModel>
+                            <input type="text" id="icon_prefix2" name="Name" #Name ngModel required>
                             <label for="icon_prefix2">Name</label>
                         </div>
                     </div>
@@ -21,13 +21,13 @@
                             <span class="material-icons prefix">
                                 email
                                 </span>
-                            <input type="email" id="icon_prefix3" name="Emsil" #Email ngModel>
+                            <input type="text" id="icon_prefix3" name="Email" #Email ngModel required [pattern]="emailPattern">
                             <label for="icon_prefix3 ">Email</label>
                         </div>
                     </div>
                     <div class="row ">
                         <div class="input-field col s12 ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <button class="btn waves-effect waves-light " type="submit " name="action ">Submit
+                            <button class="btn waves-effect waves-light " type="submit " name="action " [disabled]="!registerForm.valid">Submit
                                 <i class="material-icons right ">send</i>
                               </button>
                         </div>
